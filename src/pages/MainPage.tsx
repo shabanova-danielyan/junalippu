@@ -14,7 +14,7 @@ const MainPage: React.FC = () => {
         <div>
             <Header />
             <main className="p-4">
-                {/* Форма поиска */}
+                {/* search journey*/}
                 <section>
                     <h2>Where do you want to go</h2>
                     <form>
