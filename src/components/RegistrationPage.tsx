@@ -3,7 +3,7 @@ import React from 'react';
 const RegistrationPage: React.FC = () => {
     return (
         <div>
-            {/* Форма регистрации */}
+            {/* registration form */}
             <form>
                 <h2>Registration</h2>
                 <label htmlFor="name">Name:</label>
