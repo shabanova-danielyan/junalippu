@@ -7,6 +7,7 @@ import TripOptions from "~/components/BookingJourney/TripOptions";
 import Navigation from "~/components/BookingJourney/Navigation";
 
 const BookingJourney: React.FC = () => {
+  
   return (
     <div>
       <Header />
