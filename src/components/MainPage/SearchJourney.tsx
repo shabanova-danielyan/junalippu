@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+interface City {
+  id: number;
+  name: string;
+}
 
 const SearchJourney: React.FC = () => {
   const router = useRouter();
+  const [cities, setCities] = useState<City[]>([]);
+  const [from, setFrom] = useState<string>('');
+  const [to, setTo] = useState<string>('');
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [returnDate, setReturnDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    const fetchCities = async () => {
+      const response = await fetch('/api/cities');
+      const data = await response.json();
+      setCities(data);
+    };
+
+    fetchCities();
+  }, []);
 
   const handleSearchJourney = () => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -16,21 +38,41 @@ const SearchJourney: React.FC = () => {
         <div className="mb-2 flex space-x-4">
           <div>
             <label htmlFor="from">From:</label>
-            <input type="text" id="from" />
+            <select id="from" value={from} onChange={(e) => setFrom(e.target.value)}>
+              <option value="" disabled>Select city</option>
+              {cities.map((city) => (
+                <option key={city.id} value={city.name}>{city.name}</option>
+              ))}
+            </select>
           </div>
           <div>
             <label htmlFor="to">To:</label>
-            <input type="text" id="to" />
+            <select id="to" value={to} onChange={(e) => setTo(e.target.value)}>
+              <option value="" disabled>Select city</option>
+              {cities.map((city) => (
+                <option key={city.id} value={city.name}>{city.name}</option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="mb-2 flex space-x-4">
           <div>
             <label htmlFor="date">Date:</label>
-            <input type="text" id="date" />
+            <DatePicker
+              selected={startDate}
+              onChange={(date: Date | null) => setStartDate(date)}
+              dateFormat="dd/MM/yyyy"
+              placeholderText="Select start date"
+            />
           </div>
           <div>
             <label htmlFor="return">Return Date:</label>
-            <input type="text" id="return" />
+            <DatePicker
+              selected={returnDate}
+              onChange={(date: Date | null) => setReturnDate(date)}
+              dateFormat="dd/MM/yyyy"
+              placeholderText="Select return date"
+            />
           </div>
           <div>
             <label htmlFor="passengers">Passengers:</label>
