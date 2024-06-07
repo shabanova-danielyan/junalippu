@@ -1,4 +1,5 @@
 import { postRouter } from "~/server/api/routers/post";
+import { stationRouter } from "~/server/api/routers/search";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 
 /**
