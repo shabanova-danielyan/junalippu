@@ -75,14 +75,13 @@
 //       >
 //         {sessionData ? "Sign out" : "Sign in"}
 //       </button>
-//     </div>
+//     </div>sdfgs
 //   );
 // }
 
-import MainPage from './MainPage';
+import MainPage from "./MainPage";
 
 export default MainPage;
 
-import BookingJourney from './BookingJourney';
+import BookingJourney from "./BookingJourney";
 export { BookingJourney };
-
