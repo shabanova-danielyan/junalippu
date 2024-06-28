@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RegistrationForm: React.FC = () => {
+const RegistrationPage: React.FC = () => {
     return (
         <div className="relative">
             <form>
@@ -91,4 +91,4 @@ const RegistrationForm: React.FC = () => {
     );
 };
 
-export default RegistrationForm;
+export default RegistrationPage;

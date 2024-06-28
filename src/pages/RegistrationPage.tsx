@@ -1,15 +1,15 @@
 // src/pages/RegistrationPage.tsx
 import React from 'react';
-import RegistrationForm from '../components/RegistrationPage/RegistrationForm';
+import RegistrationPage from '../components/RegistrationPage/RegistrationPage';
 import Header from '~/components/Header';
 
-const RegistrationPage: React.FC = () => {
+const RegistrationPage1: React.FC = () => {
     return (
         <div>
             <Header />
-            <RegistrationForm />
+            <RegistrationPage />
         </div>
     );
 };
 
-export default RegistrationPage;
+export default RegistrationPage1;
