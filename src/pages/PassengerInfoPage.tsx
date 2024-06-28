@@ -1,13 +1,17 @@
 // src/pages/PassengerInfoPage.tsx
 import React from 'react';
 import PassengerInfo from '../components/PassengerInfo';
+import Header from '~/components/Header';
 
 const PassengerInfoPage: React.FC = () => {
     return (
-        <div>
-            <h2>Passenger Info</h2>
+        <>
+        <Header />
+        
+            
             <PassengerInfo />
-        </div>
+        
+        </>
     );
 }
 
