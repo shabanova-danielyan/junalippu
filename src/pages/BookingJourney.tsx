@@ -7,33 +7,31 @@ import TripOptions from "~/components/BookingJourney/TripOptions";
 import Navigation from "~/components/BookingJourney/Navigation";
 
 const BookingJourney: React.FC = () => {
-  
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div>
-        {/* steps of booking journey*/}
-        <section>
-          <h2>Booking Journey</h2>
+      <main className="flex-grow p-8">
+        {/* Steps of booking journey */}
+        <section className="mb-8">
           <StepButtons />
         </section>
 
-        {/* details of journey*/}
-        <section>
+        {/* Details of journey */}
+        <section className="mb-8">
           <TripDetails />
         </section>
 
-        {/* list of journey options*/}
-        <section>
+        {/* List of journey options */}
+        <section className="mb-8">
           <TripOptions />
         </section>
 
-        {/* navigation days */}
+        {/* Navigation days */}
         <section>
           <Navigation />
         </section>
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 };

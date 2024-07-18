@@ -16,45 +16,18 @@ const TripOptions: React.FC = () => {
     ];
 
     return (
-        <div>
-            <div className="trip-options">
-                {trips.map(trip => (
-                    <div key={trip.id} className="trip-option-row">
-                        <p>
-                            <Link href={`/Journey?time=${trip.time}&duration=${trip.duration}&price=${trip.price}&date=${trip.date}`}>
-                                {trip.time}
-                            </Link>
-                        </p>
-                        <p>{trip.duration}</p>
-                        <p>{trip.price}</p>
-                    </div>
-                ))}
-            </div>
-            <style jsx>{`
-                .trip-options {
-                    display: flex;
-                    flex-direction: column;
-                }
-                .trip-option-row {
-                    display: flex;
-                    justify-content: space-between;
-                    margin: 8px 0;
-                    padding: 8px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                }
-                .trip-option-row p {
-                    flex: 1;
-                    text-align: center;
-                    margin: 0;
-                }
-                .trip-option-row p:first-child {
-                    text-align: left;
-                }
-                .trip-option-row p:last-child {
-                    text-align: right;
-                }
-            `}</style>
+        <div className="space-y-4">
+            {trips.map(trip => (
+                <div key={trip.id} className="flex justify-between items-center p-4 border border-gray-300 rounded-md bg-gray-200">
+                    <p className="text-lg font-medium text-black">
+                        <Link href={`/Journey?time=${trip.time}&duration=${trip.duration}&price=${trip.price}&date=${trip.date}`}>
+                            {trip.time}
+                        </Link>
+                    </p>
+                    <p className="text-lg text-black">{trip.duration}</p>
+                    <p className="text-lg text-black">{trip.price}</p>
+                </div>
+            ))}
         </div>
     );
 }
