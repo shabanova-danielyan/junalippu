@@ -5,7 +5,7 @@ import Footer from "~/components/Footer";
 
 const Journey: React.FC = () => {
   const router = useRouter();
-  const { time, duration, price, date } = router.query;
+  const { time, duration, price, date, departureCity, arrivalCity } = router.query;
 
   const handleContinue = () => {
     router.push("/PaymentMethod");
@@ -16,7 +16,10 @@ const Journey: React.FC = () => {
       <Header />
       <main className="flex-grow p-8 max-w-4xl mx-auto bg-gray-100">
         <h2 className="text-3xl font-bold text-center mb-6">Customized Departure Itinerary, Seat, and Class</h2>
+        
         <p className="text-xl mb-4 text-center"><strong>Date:</strong> {date}</p>
+        <p className="text-xl mb-4 text-center"><strong>Departure City:</strong> {departureCity}</p>
+        <p className="text-xl mb-6 text-center"><strong>Arrival City:</strong> {arrivalCity}</p>
         <p className="text-xl mb-6 text-center"><strong>Details:</strong> {time} - {duration} - {price}</p>
 
         <h3 className="text-2xl font-semibold mb-4 text-center">Travel Class</h3>

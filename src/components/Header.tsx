@@ -56,10 +56,10 @@ const Header: React.FC = () => {
 
             {/* Conditional rendering of description */}
             {showDescription && (
-                <div className="absolute bg-white rounded-lg shadow-md p-4 top-20 right-0 z-10">
-                    <h3 className="text-black text-xl font-bold mb-2">About Us</h3>
-                    <p className="text-gray-700">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero at nunc vulputate, vitae congue urna dictum.
+                <div className="absolute bg-white rounded-lg shadow-lg p-6 top-16 right-0 z-20 max-w-sm">
+                    <h3 className="text-gray-800 text-xl font-semibold mb-2">About Us</h3>
+                    <p className="text-gray-600 text-base leading-relaxed">
+                        Junalippu is a user-friendly and intuitive application designed to streamline your travel planning experience. We make it easy for you to find the best routes, select travel classes, and manage all the details of your journey with just a few clicks.
                     </p>
                 </div>
             )}
