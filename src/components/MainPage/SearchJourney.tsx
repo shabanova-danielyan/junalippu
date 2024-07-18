@@ -1,3 +1,5 @@
+// components/SearchJourney.tsx
+
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import DatePicker from "react-datepicker";
@@ -15,6 +17,7 @@ const SearchJourney: React.FC = () => {
   const [to, setTo] = useState<string>('');
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [returnDate, setReturnDate] = useState<Date | null>(null);
+  const [passengers, setPassengers] = useState<number>(1);
 
   useEffect(() => {
     const fetchCities = async () => {
@@ -27,8 +30,19 @@ const SearchJourney: React.FC = () => {
   }, []);
 
   const handleSearchJourney = () => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    router.push("/BookingJourney");
+    const startDateStr = startDate ? startDate.toISOString() : '';
+    const returnDateStr = returnDate ? returnDate.toISOString() : '';
+
+    router.push({
+      pathname: "/BookingJourney",
+      query: {
+        from,
+        to,
+        startDate: startDateStr,
+        returnDate: returnDateStr, // Send the return date only if it is selected
+        passengers: passengers.toString(),
+      },
+    });
   };
 
   return (
@@ -89,7 +103,12 @@ const SearchJourney: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <label htmlFor="passengers" className="mb-1">Passengers:</label>
-              <select id="passengers" className="p-2 border rounded">
+              <select
+                id="passengers"
+                value={passengers}
+                onChange={(e) => setPassengers(Number(e.target.value))}
+                className="p-2 border rounded"
+              >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

@@ -5,9 +5,9 @@ import Footer from "~/components/Footer";
 
 const Journey: React.FC = () => {
   const router = useRouter();
+  const { time, duration, price, date } = router.query;
 
   const handleContinue = () => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     router.push("/PaymentMethod");
   };
 
@@ -15,8 +15,8 @@ const Journey: React.FC = () => {
     <div>
       <Header />
       <h2>Costumized departure itinerary, seat and class</h2>
-      <p>Monday 6.5.2024</p>
-      <p>Lappeenranta - Tampere 1 adult Train nr: 171</p>
+      <p>{date}</p>
+      <p>{time} - {duration} - {price}</p>
 
       <h3>Travel class</h3>
       <div>
@@ -33,7 +33,7 @@ const Journey: React.FC = () => {
       <h3>Van no:</h3>
       <input type="text" placeholder="Enter van number" />
 
-      <h3>Total price: Euro</h3>
+      <h3>Total price: {price}</h3>
       <p>---</p>
 
       <button onClick={handleContinue}>Continue</button>
