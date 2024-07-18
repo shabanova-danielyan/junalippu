@@ -12,31 +12,49 @@ const Journey: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <h2>Costumized departure itinerary, seat and class</h2>
-      <p>{date}</p>
-      <p>{time} - {duration} - {price}</p>
+      <main className="flex-grow p-8 max-w-4xl mx-auto bg-gray-100">
+        <h2 className="text-3xl font-bold text-center mb-6">Customized Departure Itinerary, Seat, and Class</h2>
+        <p className="text-xl mb-4 text-center"><strong>Date:</strong> {date}</p>
+        <p className="text-xl mb-6 text-center"><strong>Details:</strong> {time} - {duration} - {price}</p>
 
-      <h3>Travel class</h3>
-      <div>
-        <button>1 class</button>
-        <span>36 euro</span>
-      </div>
-      <div>
-        <button>2 class</button>
-        <span>15 euro</span>
-      </div>
+        <h3 className="text-2xl font-semibold mb-4 text-center">Travel Class</h3>
+        <div className="flex justify-center gap-4 mb-6">
+          <div className="flex-1 bg-white border border-gray-300 rounded-lg shadow-lg p-4 text-center">
+            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg mb-2 hover:bg-blue-700">1st Class</button>
+            <div className="text-xl font-bold">{price}</div>
+          </div>
+          <div className="flex-1 bg-white border border-gray-300 rounded-lg shadow-lg p-4 text-center">
+            <button className="bg-green-600 text-white px-4 py-2 rounded-lg mb-2 hover:bg-green-700">2nd Class</button>
+            <div className="text-xl font-bold">{(price && price !== 'NaN') ? (parseFloat(price)/2).toFixed(2) : 'N/A'}</div>
+          </div>
+        </div>
 
-      <h3>Seat no:</h3>
-      <input type="text" placeholder="Enter seat number" />
-      <h3>Van no:</h3>
-      <input type="text" placeholder="Enter van number" />
+        <h3 className="text-2xl font-semibold mb-4">Seat No:</h3>
+        <input 
+          type="text" 
+          placeholder="Enter seat number" 
+          className="w-full p-3 border border-gray-300 rounded-lg mb-6"
+        />
 
-      <h3>Total price: {price}</h3>
-      <p>---</p>
+        <h3 className="text-2xl font-semibold mb-4">Van No:</h3>
+        <input 
+          type="text" 
+          placeholder="Enter van number" 
+          className="w-full p-3 border border-gray-300 rounded-lg mb-6"
+        />
 
-      <button onClick={handleContinue}>Continue</button>
+        <h3 className="text-2xl font-semibold mb-4 text-center">Total Price: <span className="text-blue-600">{price}</span></h3>
+        <p className="text-center mb-6">---</p>
+
+        <button 
+          onClick={handleContinue} 
+          className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg text-xl font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Continue
+        </button>
+      </main>
       <Footer />
     </div>
   );
