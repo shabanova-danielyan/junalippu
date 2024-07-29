@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                     <div className="bg-white rounded-lg shadow-lg p-4 max-w-4xl mx-auto mb-4">
                         <h3 className="text-gray-800 text-2xl font-semibold mb-2">FAQ</h3>
                         <p className="text-gray-600 text-base leading-relaxed">
-                            Find answers to the most frequently asked questions about our services and platform. If you have any additional questions, feel free to reach out to our support team.
+                            Find answers to the most frequently asked questions about our services and platform. If you have any additional questions, feel free to reach out to our support team. Thanks.
                         </p>
                     </div>
                 )}
