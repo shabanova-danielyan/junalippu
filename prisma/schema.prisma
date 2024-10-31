@@ -187,17 +187,17 @@ model Calendar {
 
 // prisma/schema.prisma
 
-datasource db {
-  provider = "postgresql" // or your database provider
-  url      = env("DATABASE_URL")
-}
+//datasource db {
+//  provider = "postgresql" // or your database provider
+//  url      = env("DATABASE_URL")
+//}
 
-generator client {
-  provider = "prisma-client-js"
-}
+//generator client {
+//  provider = "prisma-client-js"
+//}
 
-model Stop {
-  id        Int     @id @default(autoincrement())
-  stop_id   String
-  stop_name String
-}
+//model Stop {
+//  id        Int     @id @default(autoincrement())
+//  stop_id   String
+//  stop_name String
+//}
