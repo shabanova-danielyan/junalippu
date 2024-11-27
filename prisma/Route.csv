@@ -1,3 +1,4 @@
+route_id,route_long_name,train_id
 HKI_TKU_A,Helsinki-Turku-aamu,941
 HKI_TKU_P,Helsinki-Turku-päivä,951
 HKI_TKU_ILTP,Helsinki-Turku-iltapäivä,957
