@@ -1,3 +1,4 @@
+seat_id,seat_number,reserved,car_id,travel_class
 32000,1,0,220000,1
 32001,2,0,220000,1
 32002,3,0,220000,2
